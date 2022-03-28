@@ -25,9 +25,3 @@ script:
 
   - python -m unittest tests/test_login.py
   - python -m unittest tests/test_register.py
-
-after_success: 
-  - echo 'deploy or change branch'
-after_failure: 
-- echo 'return to development'
-
