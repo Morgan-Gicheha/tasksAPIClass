@@ -6,7 +6,8 @@ python:
 install:
   - python -m pip install --upgrade pip
   # - "(cd base && python setup.py egg_info)"
-  - "pip install -e ."
+  - pip install setuptools --no-use-wheel --upgrade
+  - pip install wheel --no-cache
   - pip install -r requirements.txt
 # command to run tests
 script:
