@@ -26,7 +26,7 @@ pytz
 regex
 sentry-sdk
 six
-SQLAlchemy
+SQLAlchemy==1.3.23
 toml
 typed-ast
 urllib3
