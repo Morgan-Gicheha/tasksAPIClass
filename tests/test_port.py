@@ -9,4 +9,6 @@ class Port_test(Skeleton_test):
 
     def test_port(self):
         response = self.app.get("http://127.0.0.1:5000/api/doc")
-        self.assertEqual(response.status_code,200)
+        self.assertEqual(response.status_code,200)ith how things were, Agile's "founding fathers" came up with a manifesto based on 12 principles.
+
+#1 Satisfy Customers Through Early & Continuous Delivery
