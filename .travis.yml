@@ -21,6 +21,7 @@ install:
   - pip install blinker
 
 # command to run tests
+# 
 script:
 
   - python -m unittest tests/test_login.py
