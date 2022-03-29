@@ -33,4 +33,3 @@ Werkzeug==1.0.1
 zipp
 gunicorn==20.1.0
 Flask-JWT-Extended
-blinker==1.3
