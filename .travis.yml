@@ -26,8 +26,12 @@ script:
 
   - python -m unittest tests/test_login.py
   - python -m unittest tests/test_register.py
-
-after_success: 
-  - echo 'TESTS RAN TO COMPLETION, PROCEED TO DEPLOY'
-after_failure: 
-  - echo 'TESTS FAILED, RETURN TO DEVELOPMENT TEAM'
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    branch: main
+# after_success: 
+#   - echo 'TESTS RAN TO COMPLETION, PROCEED TO DEPLOY'
+# after_failure: 
+#   - echo 'TESTS FAILED, RETURN TO DEVELOPMENT TEAM'
