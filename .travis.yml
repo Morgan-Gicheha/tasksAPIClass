@@ -29,7 +29,7 @@ addons:
 deploy:
   provider: script
   before_script: chmod + x login.sh
-  script: bash login.sh & echo 'before_script'
+  script: bash login.sh
   on:
     branch: main
 
