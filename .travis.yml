@@ -28,7 +28,7 @@ script:
   - python -m unittest tests/test_register.py
 deploy:
   provider: script
-  script: deploy.sh
+  script: login.sh
   on:
     branch: main
 # after_success: 
