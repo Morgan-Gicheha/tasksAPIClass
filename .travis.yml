@@ -28,7 +28,8 @@ script:
   - python -m unittest tests/test_register.py
 deploy:
   provider: script
-  script: login.sh
+  before_script: 'chmod + x login.sh'
+  script: bash login.sh
   on:
     branch: main
 # after_success: 
