@@ -4,7 +4,7 @@ HOSTS="138.68.189.32"
 SCRIPT="pwd"
 value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
-    # ssh -i ./travisDeploy root@138.68.189.32 'ls'
+    ssh -i ./travisDeploy root@138.68.189.32 'ls'
     ls
     pwd
     
@@ -12,6 +12,7 @@ for HOSTNAME in ${HOSTS} ; do
     # # ssh-add -T pubkey ${value}
     # # ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
     # ssh  root@138.68.189.32
+
 
 
 done
