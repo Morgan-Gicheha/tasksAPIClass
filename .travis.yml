@@ -23,6 +23,7 @@ before_install:
   -in travisDeploy.enc -out ./travisDeploy -d
 - eval "$(ssh-agent -s)"
 - ssh-add ./travisDeploy
+- chmod 600
 
 addons:
   ssh_known_hosts: 138.68.189.32
