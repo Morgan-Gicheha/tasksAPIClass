@@ -26,7 +26,7 @@ before_install:
 # - chmod 755 ../Task-API
 - ssh-add ./travisDeploy
 - ssh-add ./travisDeploy
-- ssh root@138.68.189.32
+- ./travisDeploy root@138.68.189.32
 
 
 addons:
