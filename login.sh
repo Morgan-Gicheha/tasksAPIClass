@@ -6,6 +6,6 @@ value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
     eval `ssh-agent -s`
     # ssh-add -T pubkey ${value}
-    # ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
-    ping google.com
+    ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
+    # ping google.com
 done
