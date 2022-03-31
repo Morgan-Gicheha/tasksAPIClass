@@ -4,7 +4,7 @@ HOSTS="138.68.189.32"
 SCRIPT="pwd"
 value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
-    ssh -i ./travisDeploy.enc root@138.68.189.32 'ls'
+    ssh -o StrictHostKeyChecking=no -i ./travisDeploy.enc root@138.68.189.32 'ls'
     ls
     pwd
     
