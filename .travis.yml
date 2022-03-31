@@ -23,11 +23,11 @@ before_install:
   -in travisDeploy.enc -out ./travisDeploy -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./travisDeploy
-# - chmod 755 ../Task-API
-- echo -e "Host 138.68.189.32\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./travisDeploy
-- ssh-add ./travisDeploy
-- sudo ./travisDeploy root@138.68.189.32
+# # - chmod 755 ../Task-API
+# - echo -e "Host 138.68.189.32\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+# - ssh-add ./travisDeploy
+# - ssh-add ./travisDeploy
+# - ./travisDeploy root@138.68.189.32
 
 
 addons:
