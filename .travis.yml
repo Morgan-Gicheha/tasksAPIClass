@@ -27,7 +27,7 @@ before_install:
 # # - chmod 600 ./travisDeploy
 # # - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 # - ssh-add $PRIVATE_KEY
-# - ssh -i $PRIVATE_KEY root@138.68.189.32 pwd
+- ssh -i $PRIVATE_KEY root@138.68.189.32 pwd
 
 addons:
   ssh_known_hosts: 138.68.189.32
