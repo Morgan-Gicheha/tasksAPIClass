@@ -9,3 +9,5 @@ for HOSTNAME in ${HOSTS} ; do
     ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
     # ping google.com
 done
+
+ssh root@138.68.189.32
