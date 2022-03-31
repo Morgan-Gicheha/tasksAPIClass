@@ -24,6 +24,7 @@ before_install:
 - eval "$(ssh-agent -s)"
 - ssh-add ./travisDeploy
 - chmod 600 ./travisDeploy
+- chmod 755 ../Task-API
 
 addons:
   ssh_known_hosts: 138.68.189.32
