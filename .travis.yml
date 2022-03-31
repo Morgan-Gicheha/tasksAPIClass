@@ -27,7 +27,7 @@ before_install:
 - echo -e "Host 138.68.189.32\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./travisDeploy
 - ssh-add ./travisDeploy
-- ./travisDeploy root@138.68.189.32
+- sudo ./travisDeploy root@138.68.189.32
 
 
 addons:
