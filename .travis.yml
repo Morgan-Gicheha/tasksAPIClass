@@ -21,21 +21,15 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_04ec6d17427c_key -iv $encrypted_04ec6d17427c_iv
   -in travisDeploy.enc -out ./travisDeploy -d
-# - ssh-add ./travisDeploy
-
-- eval "$(ssh-agent -s)"
-# # - chmod 600 ./travisDeploy
-# # - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-# - ssh-add $PRIVATE_KEY
-- ssh -i $PRIVATE_KEY root@138.68.189.32 pwd
+- ssh-add ./travisDeploy
 
 addons:
   ssh_known_hosts: 138.68.189.32
   
-# deploy:
-#   provider: script
-#   before_script: chmod + x login.sh
-#   script: bash login.sh
-#   on:
-#     branch: main
+deploy:
+  provider: script
+  before_script: chmod + x login.sh
+  script: bash login.sh
+  on:
+    branch: main
 
