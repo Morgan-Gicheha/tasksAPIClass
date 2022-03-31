@@ -34,6 +34,7 @@ addons:
   ssh_known_hosts: 138.68.189.32
   
 deploy:
+  overwrite: true
   provider: script
   before_script: chmod + x login.sh
   script: bash ./login.sh
