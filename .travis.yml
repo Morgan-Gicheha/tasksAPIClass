@@ -23,6 +23,12 @@ before_install:
   -in travisDeploy.enc -out ./travisDeploy -d
 - ssh-add ./travisDeploy
 
+- eval "$(ssh-agent -s)"
+- chmod 600 ./travisDeploy
+# - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh-add ./travisDeploy
+- ssh -i ./travisDeploy root@138.68.189.32 pwd
+
 addons:
   ssh_known_hosts: 138.68.189.32
   
