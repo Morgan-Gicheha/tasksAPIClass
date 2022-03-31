@@ -21,7 +21,7 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_04ec6d17427c_key -iv $encrypted_04ec6d17427c_iv
   -in travisDeploy.enc -out ./travisDeploy -d
-- ssh-add ./travisDeploy
+# - ssh-add ./travisDeploy
 
 - eval "$(ssh-agent -s)"
 - chmod 600 ./travisDeploy
