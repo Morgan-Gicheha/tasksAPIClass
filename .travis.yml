@@ -1,17 +1,30 @@
 language: python
 python:
 - '3.7'
-
+branches:
+  only:
+  - A
+  - main
+install:
+- python -m pip install --upgrade pip
+- pip install --upgrade setuptools
+- pip install wheel --no-cache
+- pip install -r requirements.txt
+- pip install psycopg2-binary
+- pip install --upgrade setuptools
+- pip install Flask-JWT-Extended
+- pip install blinker
+script:
+- python -m unittest tests/test_login.py
+- python -m unittest tests/test_register.py
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
 - eval "$(ssh-agent -s)"
-- chmod 600 ./travisDeploy.enc
-# # - chmod 755 ../Task-API
+- chmod 600 ./travisDeploy
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-# - ssh-add ./travisDeploy
-# - ssh-add ./travisDeploy
-# - ./travisDeploy root@138.68.189.32
+- ssh-add ./travisDeploy
+- ssh -i ./travisDeploy root@138.68.189.32 pwd
 
 
 addons:
@@ -20,6 +33,7 @@ addons:
 deploy:
   provider: script
   before_script: chmod + x login.sh
+  overwrite: false
   script: bash ./login.sh
   on:
     branch: main
