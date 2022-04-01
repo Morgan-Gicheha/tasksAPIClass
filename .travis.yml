@@ -19,10 +19,10 @@ script:
 - python -m unittest tests/test_register.py
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./travisDeploy
-- echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
+# - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ls
 
 
