@@ -1,12 +1,12 @@
 
 USERNAME=root
 HOSTS="138.68.189.32"
-SCRIPT="pwd"
+SCRIPT="git clone git@github.com:Morgan-Gicheha/tasksAPIClass.git"
 # value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
-    ls
-    ssh -i ./deploy_key root@138.68.189.32 pwd
-    ls
+    
+    ssh -i  root@138.68.189.32 '${SCRIPT} ls'
+    
     # chmod 600 ./deploy_key
     # ssh-keygen  -f -p -P "" -N "" -f ./travisDeploy.enc
     # eval `ssh-agent -s`
