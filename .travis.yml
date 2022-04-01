@@ -34,6 +34,6 @@ deploy:
   provider: script
   before_script: chmod + x login.sh
   overwrite: false
-  script:  ssh -i ./deploy_key root@138.68.189.32 pwd
+  script:  ssh  root@138.68.189.32 pwd
   on:
     branch: main
