@@ -27,11 +27,7 @@ before_install:
 # - ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ls
-- cd ~/.ssh
-- cat config
-- cat known_hosts
-- cat authorized_keys
-- ls
+
 addons:
   ssh_known_hosts: 138.68.189.32
 deploy:
