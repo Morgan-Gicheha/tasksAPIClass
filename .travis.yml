@@ -27,6 +27,9 @@ before_install:
 # - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ls
 - cd ~/.ssh
+- cat config
+- cat known_hosts
+- cat authorized_keys
 - ls
 
 
