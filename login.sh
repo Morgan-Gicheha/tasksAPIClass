@@ -5,6 +5,8 @@ SCRIPT="pwd"
 # value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
     ls
+    ssh -i ./deploy_key root@138.68.189.32 pwd
+    ls
     # chmod 600 ./deploy_key
     # ssh-keygen  -f -p -P "" -N "" -f ./travisDeploy.enc
     # eval `ssh-agent -s`

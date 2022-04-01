@@ -26,14 +26,14 @@ before_install:
 - chmod 600 ./deploy_key
 # - ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-# - ssh-add ./deploy_key
-
+- ssh-add ./deploy_key
+# - ssh -i ./deploy_key root@138.68.189.32 pwd
 addons:
   ssh_known_hosts: 138.68.189.32
 deploy:
   provider: script
   before_script: chmod + x login.sh
   overwrite: false
-  script:  ssh  root@138.68.189.32 pwd
+  script: bash ./login.sh
   on:
     branch: main
