@@ -24,9 +24,9 @@ before_install:
 - chmod 600 ./travisDeploy.enc
 # # - chmod 755 ../Task-API
 - echo -e "Host 138.68.189.32\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./travisDeploy
+- ssh-add ./travisDeploy.enc
 # - ssh-add ./travisDeploy
-- ssh -i ./travisDeploy root@138.68.189.32 pwd
+- ssh -i ./travisDeploy.enc root@138.68.189.32 pwd
 
 
 addons:
