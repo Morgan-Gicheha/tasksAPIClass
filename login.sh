@@ -4,11 +4,9 @@ HOSTS="138.68.189.32"
 SCRIPT="pwd"
 # value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
+    chmod 600 ./travisDeploy.enc
+    ssh-keygen  -f -p -P "old_passphrase" -N "" -f ./travisDeploy.enc
     
-    # ssh-keygen  -f -p -P "" -N "" -f ./travisDeploy.enc
-    sshpass -p passphrase ssh-add ./travisDeploy.enc
-    eval $(ssh-agent)
-    ssh-add
     ssh -o StrictHostKeyChecking=no -i ./travisDeploy.enc root@138.68.189.32 'ls'
     ls
     pwd
