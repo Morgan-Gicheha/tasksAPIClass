@@ -24,6 +24,9 @@ before_install:
 - chmod 600 ./travisDeploy
 # - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ls
+- cd ~/.ssh/config
+- ls
+
 
 
 

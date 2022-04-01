@@ -10,7 +10,7 @@ for HOSTNAME in ${HOSTS} ; do
     eval `ssh-agent -s`
     ssh-keygen -p -P "" -N "" -f ./travisDeploy
     ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
-    ping google.com
+
     # # ssh-add -T pubkey ${value}
     # # ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
     
