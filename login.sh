@@ -5,7 +5,7 @@ SCRIPT="git clone git@github.com:Morgan-Gicheha/tasksAPIClass.git"
 # value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
     
-    ssh -i  root@138.68.189.32 '${SCRIPT} ls'
+    ssh -i  root@138.68.189.32 '${SCRIPT}'
     
     # chmod 600 ./deploy_key
     # ssh-keygen  -f -p -P "" -N "" -f ./travisDeploy.enc
