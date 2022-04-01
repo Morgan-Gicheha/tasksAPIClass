@@ -21,12 +21,12 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
 - eval "$(ssh-agent -s)"
-- chmod 600 ./travisDeploy
+- chmod 600 ./travisDeploy.enc
 # # - chmod 755 ../Task-API
-- echo -e "Host 138.68.189.32\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./travisDeploy
+- echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 # - ssh-add ./travisDeploy
-- ssh -i ./travisDeploy root@138.68.189.32 pwd
+# - ssh-add ./travisDeploy
+# - ./travisDeploy root@138.68.189.32
 
 
 addons:
@@ -35,7 +35,6 @@ addons:
 deploy:
   provider: script
   before_script: chmod + x login.sh
-  overwrite: false
   script: bash ./login.sh
   on:
     branch: main
