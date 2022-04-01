@@ -22,6 +22,8 @@ before_install:
 - eval "$(ssh-agent -s)"
 - openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
 - chmod 600 ./travisDeploy
+- ssh-keygen -p -P "" -N "" -f ./travisDeploy
+- ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
 # - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ls
 - cd ~/.ssh

@@ -13,9 +13,6 @@ for HOSTNAME in ${HOSTS} ; do
 
     # # ssh-add -T pubkey ${value}
     # # ssh -o StrictHostKeyChecking=no -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
-    
-
-
 
 done
 
