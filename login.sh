@@ -5,7 +5,7 @@ SCRIPT="ls"
 # value=$(<travisDeploy)
 for HOSTNAME in ${HOSTS} ; do
     
-    ssh -i  root@138.68.189.32 '${SCRIPT}'
+    ssh -i  root@138.68.189.32 "ls"
     
     # chmod 600 ./deploy_key
     # ssh-keygen  -f -p -P "" -N "" -f ./travisDeploy.enc
