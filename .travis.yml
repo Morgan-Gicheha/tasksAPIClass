@@ -5,18 +5,18 @@ branches:
   only:
   - A
   - main
-install:
-- python -m pip install --upgrade pip
-- pip install --upgrade setuptools
-- pip install wheel --no-cache
-- pip install -r requirements.txt
-- pip install psycopg2-binary
-- pip install --upgrade setuptools
-- pip install Flask-JWT-Extended
-- pip install blinker
-script:
-- python -m unittest tests/test_login.py
-- python -m unittest tests/test_register.py
+# install:
+# - python -m pip install --upgrade pip
+# - pip install --upgrade setuptools
+# - pip install wheel --no-cache
+# - pip install -r requirements.txt
+# - pip install psycopg2-binary
+# - pip install --upgrade setuptools
+# - pip install Flask-JWT-Extended
+# - pip install blinker
+# script:
+# - python -m unittest tests/test_login.py
+# - python -m unittest tests/test_register.py
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
