@@ -8,8 +8,8 @@ for HOSTNAME in ${HOSTS} ; do
     chmod 600 ./travisDeploy
     # ssh-keygen  -f -p -P "" -N "" -f ./travisDeploy.enc
     eval `ssh-agent -s`
-    ssh-keygen -p -P "" -N "" -f ./travisDeploy
-    ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
+    # ssh-keygen -p -P "" -N "" -f ./deploy_key
+    ssh -o StrictHostKeyChecking=no -i ./deploy_key root@138.68.189.32 'ls'
 
 
     # # ssh-add -T pubkey ${value}

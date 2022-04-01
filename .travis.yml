@@ -2,7 +2,7 @@ language: python
 python:
 - '3.7'
 env:
-  - SERVER_IP_ADDRESS=138.68.189.32
+- SERVER_IP_ADDRESS=138.68.189.32
 branches:
   only:
   - A
@@ -19,13 +19,12 @@ install:
 script:
 - python -m unittest tests/test_login.py
 - python -m unittest tests/test_register.py
-
 before_install:
+- openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv
+  -in deploy_key.enc -out ./deploy_key -d
 - eval "$(ssh-agent -s)"
-- openssl aes-256-cbc -K $encrypted_e06e714fee09_key -iv $encrypted_e06e714fee09_iv -in travisDeploy.enc -out ./travisDeploy -d
 - chmod 600 ./travisDeploy
-# - ssh-keygen -p -P "" -N "" -f ./travisDeploy
-- ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
+# - ssh -o StrictHostKeyChecking=no -i ./travisDeploy root@138.68.189.32 'ls'
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ls
 - cd ~/.ssh
@@ -33,13 +32,8 @@ before_install:
 - cat known_hosts
 - cat authorized_keys
 - ls
-
-
-
-
 addons:
   ssh_known_hosts: 138.68.189.32
-  
 deploy:
   provider: script
   before_script: chmod + x login.sh
@@ -47,4 +41,3 @@ deploy:
   script: bash ./login.sh
   on:
     branch: main
-
