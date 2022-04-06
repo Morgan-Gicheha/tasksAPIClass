@@ -1,3 +1,11 @@
-FROM tiangolo/uwsgi-nginx-flask:flask
+FROM python:alpine
 
-COPY ./app /app
+COPY ./requirements.txt .
+
+
+RUN pip install -r requirements.txt
+
+COPY . .
+ENV FLASK_APP=main.py
+CMD ["python", "main.py"]
+
