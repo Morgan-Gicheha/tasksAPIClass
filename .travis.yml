@@ -16,9 +16,9 @@ install:
 - pip install --upgrade setuptools
 - pip install Flask-JWT-Extended
 - pip install blinker
-script:
-- python -m unittest tests/test_login.py
-- python -m unittest tests/test_register.py
+# script:
+# - python -m unittest tests/test_login.py
+# - python -m unittest tests/test_register.py
 before_install:
 - openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv
   -in deploy_key.enc -out ./deploy_key -d
