@@ -6,3 +6,4 @@ SCRIPT=" cd tasksAPIClass;git pull ;docker-compose down; docker-compose up --bui
 for HOSTNAME in ${HOSTS} ; do
     ssh -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
 done
+//morgan
