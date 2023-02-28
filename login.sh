@@ -4,3 +4,4 @@ SCRIPT="git clone git@github.com:Morgan-Gicheha/tasksAPIClass.git; cd tasksAPICl
 for HOSTNAME in ${HOSTS} ; do
     ssh -l ${USERNAME} ${HOSTNAME} "${SCRIPT}"
 done
+//morgan
